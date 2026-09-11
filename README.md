@@ -4,6 +4,8 @@ Jotline is a small inline Markdown scratchpad for a terminal. It opens ready
 for typing, keeps the current line as raw Markdown, and renders other lines in
 the same text area. It works in any macOS or Linux terminal; cmux is optional.
 
+![Jotline inline Markdown demo](assets/jotline-demo.gif)
+
 ## Quick start
 
 From a checkout:
