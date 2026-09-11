@@ -19,6 +19,7 @@ FG = (242, 242, 242)
 CYAN = (126, 220, 255)
 MAGENTA = (194, 153, 255)
 YELLOW = (246, 246, 120)
+GREEN = (145, 220, 150)
 DIM = (155, 158, 168)
 
 
@@ -40,17 +41,35 @@ def frame(lines, cursor=None, delay=900):
 
 frames = [
     frame([[('$ ', DIM, font), ('jotline -t', FG, font)]], delay=1100),
-    frame([[('# ', CYAN, font), ('Jotline scratchpad', CYAN, bold)]], cursor=0),
-    frame([[('# Jotline scratchpad', CYAN, bold)], [('', FG, font)],
-           [('Write notes without leaving the terminal.', FG, font)]], cursor=2),
+    frame([[('', FG, font)]], delay=700),
+    frame([[('# Jotline', CYAN, font)]], cursor=0, delay=550),
+    frame([[('# Jotline scratchpad', CYAN, font)]], cursor=0, delay=850),
+    frame([[('Jotline scratchpad', CYAN, bold)], [('', FG, font)]], cursor=1, delay=950),
     frame([[('Jotline scratchpad', CYAN, bold)], [('', FG, font)],
-           [('Write notes without leaving the terminal.', FG, font)]], delay=1100),
+           [('Write notes without leaving the terminal.', FG, font)]], cursor=2, delay=900),
     frame([[('Jotline scratchpad', CYAN, bold)], [('', FG, font)],
            [('Write ', FG, font), ('**bold**', FG, bold), (', ', FG, font),
-            ('*italic*', FG, font), (', and ', FG, font), ('`code`', YELLOW, font)]], cursor=2),
+            ('*italic*', FG, font), (', and ', FG, font), ('`code`', YELLOW, font)]], cursor=2, delay=650),
+    frame([[('Jotline scratchpad', CYAN, bold)], [('', FG, font)],
+           [('Write ', FG, font), ('**bold**', FG, font), (', ', FG, font),
+            ('*italic*', FG, font), (', and ', FG, font), ('`code`', FG, font)]], delay=1250),
     frame([[('Jotline scratchpad', CYAN, bold)], [('', FG, font)],
            [('Write ', FG, font), ('bold', FG, bold), (', ', FG, font),
             ('italic', FG, font), (', and ', FG, font), ('code', YELLOW, font)]], delay=1500),
+    frame([[('Jotline scratchpad', CYAN, bold)], [('', FG, font)],
+           [('## Today', FG, font)]], cursor=2, delay=700),
+    frame([[('Jotline scratchpad', CYAN, bold)], [('Today', MAGENTA, bold)],
+           [('', FG, font)]], delay=1000),
+    frame([[('Jotline scratchpad', CYAN, bold)], [('Today', MAGENTA, bold)],
+           [('- [ ] Review the README', FG, font)]], cursor=2, delay=750),
+    frame([[('Jotline scratchpad', CYAN, bold)], [('Today', MAGENTA, bold)],
+           [('☐ Review the README', FG, font)]], delay=900),
+    frame([[('Jotline scratchpad', CYAN, bold)], [('Today', MAGENTA, bold)],
+           [('☐ Review the README', FG, font)],
+           [('- [x] Ship v0.1.0', FG, font)]], cursor=3, delay=750),
+    frame([[('Jotline scratchpad', CYAN, bold)], [('Today', MAGENTA, bold)],
+           [('☐ Review the README', FG, font)],
+           [('☑ Ship v0.1.0', GREEN, font)]], delay=1600),
 ]
 frames[0].save(OUT, save_all=True, append_images=frames[1:], loop=0, duration=[f.info["duration"] for f in frames], optimize=True)
 print(OUT)
