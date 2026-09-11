@@ -8,10 +8,13 @@ the same text area. It works in any macOS or Linux terminal; cmux is optional.
 
 ## Quick start
 
-From a checkout:
+Install from GitHub:
 
 ```sh
+git clone https://github.com/mehambas/Jotline.git
+cd Jotline
 ./install.sh
+export PATH="$HOME/.local/bin:$PATH"
 jotline
 ```
 
@@ -20,6 +23,15 @@ jotline
 
 ```sh
 export PATH="$HOME/.local/bin:$PATH"
+```
+
+After installation, the repository directory is only needed for updates. To
+update an existing installation:
+
+```sh
+cd Jotline
+git pull
+./install.sh
 ```
 
 The default note is `~/.local/share/jotline/scratch.md`; the file and its
