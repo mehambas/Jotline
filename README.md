@@ -95,5 +95,8 @@ deleting the note. Global state and logs live below `~/.local/state/jotline` (or
 
 The editor uses [prompt_toolkit](https://python-prompt-toolkit.readthedocs.io/),
 [markdown-it-py](https://markdown-it-py.readthedocs.io/), and
-[Pygments](https://pygments.org/). Windows is not currently supported because
-file locking uses `fcntl`; WSL works as a Linux environment.
+[Pygments](https://pygments.org/). Native Windows terminals are not currently
+supported because file locking uses `fcntl`. Windows users can run Jotline in
+the Ubuntu (or another distribution) profile inside Windows Terminal, or in a
+VS Code WSL terminal. PowerShell, Command Prompt, Git Bash with native
+Windows Python, and the cmux global mode are not supported on Windows.
